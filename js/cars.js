@@ -219,10 +219,10 @@ var carsData =[
   displayCars(carsData);
 
       function searchCars(){
-      	var input= document.getElementById('textInput').value;
+      	var input1= document.getElementById('textInput1').value;
       	var filteredCars=[];
       	for(var i=0; i<carsData.length; i++){
-      		if(input == carsData[i].make || input == carsData[i].model){
+      		if(input1 == carsData[i].make || input1 == carsData[i].model){
       			filteredCars.push(carsData[i]);
       		}
       	}
@@ -233,6 +233,13 @@ var carsData =[
       	}else{
       		displayCars(filteredCars);
       	}
+
+        function submitData(){
+          var input2= document.getElementById('textInput2').value;
+          input2.push(carsData[i]);
+          document.getElementById('textInput2').innerHTML=+'<p >'+input2+'</p>'
+          document.getElementById('textInput2').value = '';
+        }
       	
 
 
