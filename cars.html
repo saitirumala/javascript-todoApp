@@ -3,15 +3,24 @@
 	<head>
 		<title>Car Models</title>
 		<style type="text/css">
-			p{
-				margin-right: 330px;
+		.nav_bar>p{
+			padding: 50px 30px 30px 200px;
+			color: white;
+			font-size: 50px;
+			margin: 0px;
+			border-top:10px solid white;
+		}
+			.main_form>p{
+				margin-right: 350px;
 				border:1px solid black;
 				float: right;
 				padding: 20px;
 				padding-top: 10px;
 				margin-top: 0px;
-				background-color: #ffbf80;
+				background-color: #9d0028;
 				border-radius: 25px;
+				color: white;
+				border: 5px solid white;
 
 			}
 			input{
@@ -23,18 +32,33 @@
 				height: 22px;
 			}
 			h3{
-				margin-left: 560px;
+				margin-left: 530px;
+				color: white;
 			}
 		</style>
 	</head>
-	<body style ="background-color: #ffeecc;">
+	<body style ="background-color: black;">
 		<img src ="images/carslogo.png" style="width: 200px;height:150px;float:right;position: absolute; ">
-		<h1 style="background-color: #ffa366;border-radius: 20px;border:black;margin: 30px 0px 0px 100px;padding-left: 100px; width:78%;">Best collection of Cars</h1>
+		<div class ="logos">
+			<img style="height: 60px;width: 60px;position: absolute;margin: 50px 10px 10px 700px;" src ="images/symbol1.png">
+			<img style="height: 60px;width: 80px;position: absolute;margin: 50px 10px 10px 780px;" src ="images/symbol2.png">
+			<img style="height: 60px;width: 60px;position: absolute;margin: 50px 10px 10px 880px;" src ="images/symbol3.png">
+			<img style="height: 60px;width: 60px;position: absolute;margin: 50px 10px 10px 950px;" src ="images/symbol4.png">
+			<img style="height: 60px;width: 60px;position: absolute;margin: 50px 10px 10px 1020px;" src ="images/symbol5.png">
+			<img style="height: 85px;width: 85px;position: absolute;margin: 40px 10px 10px 1080px;" src ="images/symbol6.png">
+			<img style="height: 60px;width: 60px;position: absolute;margin: 50px 10px 10px 1160px;" src ="images/symbol7.png">
+
+		</div>
+		<div class="nav_bar" style="background-color:#ca002c;height: 130px; width: 100%; margin:0px;">
+		 <p  style="color: white;">Best collection of Cars</p>
+	    </div>
 		<form>
-        	<button style="float:right;margin-right: 100px;margin-top: 20px;border-radius: 10px;border:1px solid black;" type="button" onclick="searchCars()">Search</button>
+        	<button style="float:right;margin-right: 60px;margin-top: 20px;border-radius: 10px;border:1px solid black;" type="button" onclick="searchCars()">Search</button>
         	<input style="float: right;margin-top: 20px;margin-right:10px;" id ="textInput1" type="text" placeholder="Search for Cars..." value="" />
         </form>
-		 <form>
+         <img style="height: 250px;width:330px; position:absolute;float:left;margin:140px 0px 10px 0px; " src ="images/carlogo1.png">
+		 <img style="height: 250px; width:350px; position: absolute;margin:100px 0px 10px 980px; " src ="images/carslogo2.png">
+		 <form class="main_form">
 		 	<h3>INSERTING OF CAR DATA</h3>
 		 	<p><B>Make:&ensp; &emsp;&emsp;&emsp;&emsp;&ensp;<input id ="textInput2" type="text" placeholder=" Make.." value="">&ensp;&nbsp;
 		 	Model:&nbsp;&emsp;&emsp;&emsp;&emsp;&ensp; <input id ="textInput2" type="text" placeholder=" Model.." value=""><br><br>
@@ -49,11 +73,11 @@
 		 	Central Locking:&nbsp; <input id ="textInput2" type="text" placeholder=" Central Locking.." value="">&emsp;
 		 	Fog Lamps:&emsp;&emsp;&ensp; <input id ="textInput2" type="text" placeholder=" Fog Lamps.." value=""> <br><br>
 		 	Origin:</B> &emsp;&emsp;&emsp;&emsp;&ensp;<input id ="textInput2" type="text" placeholder=" Origin.." value=""></p>
-		 	<button style="margin-left: 650px; border-radius:10px;border:1px solid orange; " type="button" onclick="submitData();">Submit</button>
+		 	<button style="margin-left: 630px; border-radius:10px;border:1px solid orange; " type="button" onclick="submitData();">Submit</button>
 		 </form>
-        
+		
 		<div class="main_continer" style="width: 85%;display:flex;border-radius:25px;
-		 border:5px solid black;background-color: white;margin:50px 0px 0px 100px;">
+		 border:5px solid #9d0028;background-color: white;margin:50px 0px 0px 100px;opacity: 1">
 		  <div style="margin-left: 25px;" id ="DisplayCars">
 			
 		  </div>
