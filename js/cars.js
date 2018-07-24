@@ -86,7 +86,7 @@ var carsData =[
       engine_Displ : '1197 cc',
       transmission : 'Manual',
       fuel_Type : 'Petrol',
-      poot_Space : 'NA',
+      boot_Space : 'NA',
       power_Windows : 'N',
       airbags : 'Driver and Passenger',
       abs : 'Y',
@@ -182,7 +182,7 @@ var carsData =[
       engine_Displ : '1997 cc', 
       transmission : 'Manual',
       fuel_Type : 'Petrol',
-      poot_Space : '510-Litres',
+      boot_Space : '510-Litres',
       power_Windows : 'Front and Rear',
       airbags : 'Driver and Passenger',
       abs : 'Y',
@@ -203,7 +203,7 @@ var carsData =[
         '<h5 style="margin:15px 10px 15px 10px;">Engine Displ:'+data[i].engine_Displ+'</h5>'+
         '<h5 style="margin:15px 10px 15px 10px;">Transmission:'+data[i].transmission+'</h5>'+
         '<h5 style="margin:15px 10px 15px 10px;">Fuel Type:'+data[i].fuel_Type+'</h5>'+
-        '<h5 style="margin:15px 10px 15px 10px;">Poot Space'+data[i].poot_Space+'</h5>'+
+        '<h5 style="margin:15px 10px 15px 10px;">boot Space:'+data[i].boot_Space+'</h5>'+
         '<h5 style="margin:15px 10px 15px 10px;">Power Windows:'+data[i].power_Windows+'</h5>'+
         '<h5 style="margin:15px 10px 15px 10px;">Airbags:'+data[i].airbags+'</h5>'+
         '<h5 style="margin:15px 10px 15px 10px;">ABS:'+data[i].abs+'</h5>'+
@@ -218,31 +218,83 @@ var carsData =[
 
   displayCars(carsData);
 
-      function searchCars(){
-      	var input1= document.getElementById('textInput1').value;
-      	var filteredCars=[];
-      	for(var i=0; i<carsData.length; i++){
-      		if(input1 == carsData[i].make || input1 == carsData[i].model){
-      			filteredCars.push(carsData[i]);
-      		}
-      	}
-      	console.log('hi');
-      	document.getElementById('DisplayCars').innerHTML = '';
-      	if(filteredCars.length == 0){
-      		document.getElementById('DisplayCars').innerHTML = '<h1>No items to Display</h1>';
-      	}else{
-      		displayCars(filteredCars);
-      	}
+function searchCars(){
+	var input1= document.getElementById('textInput1').value;
+	var filteredCars=[];
+	for(var i=0; i<carsData.length; i++){
+		if(input1 == carsData[i].make || input1 == carsData[i].model){
+			filteredCars.push(carsData[i]);
+		}
+	}
 
-        function submitData(){
-          var input2= document.getElementById('textInput2').value;
-          input2.push(carsData[i]);
-          document.getElementById('textInput2').innerHTML=+'<p >'+input2+'</p>'
-          document.getElementById('textInput2').value = '';
-        }
-      	
+	document.getElementById('DisplayCars').innerHTML = '';
+	if(filteredCars.length == 0){
+		document.getElementById('DisplayCars').innerHTML = '<h1>No items to Display</h1>';
+	}else{
+		displayCars(filteredCars);
+	}
+
+}
+
+function submitData(){
+  var newCarData = {};
+
+  newCarData.make = document.getElementById('make').value || '';
+  newCarData.model= document.getElementById('model').value || '';
+  newCarData.mileage= document.getElementById('mileage').value || '';
+  newCarData.engine_Displ= document.getElementById('EngineDispl').value || '';
+  newCarData.transmission= document.getElementById('Transmission').value || '';
+  newCarData.fuel_Type= document.getElementById('FuelType').value || '';
+  newCarData.boot_Space= document.getElementById('BootSpace').value || '';
+  newCarData.power_Windows= document.getElementById('PowerWindows').value || '';
+  newCarData.airbags= document.getElementById('Airbags').value || '';
+  newCarData.abs= document.getElementById('ABS').value || '';
+  newCarData.central_Locking= document.getElementById('CentralLocking').value || '';
+  newCarData.fog_Lamps= document.getElementById('FogLamps').value || '';
+  newCarData.origin= document.getElementById('Origin').value || '';
+  newCarData.img_url = 'images/carlogo1.png';
+
+  if( newCarData.make != '' && 
+      newCarData.model != '' && 
+      newCarData.mileage != '' && 
+      newCarData.engine_Displ !='' && 
+      newCarData.transmission != '' && 
+      newCarData.fuel_Type != '' && 
+      newCarData.boot_Space != '' && 
+      newCarData.Power_Windows != '' && 
+      newCarData.airbags != '' && 
+      newCarData.abs != '' && 
+      newCarData.central_Locking != '' && 
+      newCarData.fog_Lamps != '' && 
+      newCarData.origin != '' 
+    ){
+
+      carsData.push(newCarData);
+      displayCars(carsData);
 
 
-      	
-     }
+      document.getElementById('make').value="";
+      document.getElementById('model').value="";
+      document.getElementById('mileage').value="";
+      document.getElementById('EngineDispl').value="";
+      document.getElementById('Transmission').value="";
+      document.getElementById('FuelType').value="";
+      document.getElementById('BootSpace').value="";
+      document.getElementById('PowerWindows').value="";
+      document.getElementById('Airbags').value="";
+      document.getElementById('ABS').value="";
+      document.getElementById('CentralLocking').value="";
+      document.getElementById('FogLamps').value="";
+      document.getElementById('Origin').value="";
+
+      alert('new car data has been added successfully..!');
+
+  }else{
+
+    alert('Error: please enter valid data in all fields..');
+  }
+
+
+}
+        
       
